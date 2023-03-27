@@ -13,7 +13,7 @@ const GetStarted = () => (
             variants={staggerContainer}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: 'false', amount: 0.25 }}
+            viewport={{ once: false, amount: 0.25 }}
             className={`${styles.innerWidth} mx-auto flex lg:flex-row flex-col gap-8`}
         >
             <motion.div
@@ -36,7 +36,7 @@ const GetStarted = () => (
                     {startingFeatures.map((feature, index) => (
                         <StartSteps
                             key={feature}
-                            number={index + 1}
+                            number={`${index < 10 ? '0' : ''} ${index + 1}`}
                             text={feature}
                         />
                     ))}
